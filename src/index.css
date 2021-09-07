@@ -1,13 +1,56 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(240, 67%, 8%);
+  --color-dark-grey: hsl(240, 17%, 26%);
+  --color-light-grey: hsl(240, 6%, 54%);
+  --color-mercury: hsl(194, 48%, 49%);
+  --color-venus: hsl(33, 82%, 61%);
+  --color-earth: hsl(263, 67%, 51%);
+  --color-mars: hsl(10, 63%, 51%);
+  --color-jupiter: hsl(2, 68%, 53%);
+  --color-saturn: rgb(203, 80, 32);
+  --color-uranus: hsl(169, 73%, 44%);
+  --color-neptune: hsl(222, 87%, 56%);
+  --transition: 300ms ease;
+}
+
+:root {
+  --ff-spartan: "Spartan", sans-serif;
+  --ff-oswald: "Oswald", sans-serif;
+  --ff-base-size: 10px;
+}
+
+:root {
+  --button-hover: #313148;
+}
+
+html {
+  font-size: var(--ff-base-size);
+}
+
+body {
+  font-family: var(--ff-spartan);
+
+  background-color: var(--color-black);
+  background-image: url("./images/background-stars.svg");
+  min-height: 102.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
