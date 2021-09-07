@@ -51,10 +51,9 @@ const Navbar = ({ isOpen, handleMenu }) => {
         <NavbarNavItems $isOpen={isOpen}>
           {planets.map((planet, i) => {
             return (
-              <NavbarNavItem>
+              <NavbarNavItem key={i}>
                 <NavbarNavLinkR
                   to={`/${planet}`}
-                  key={i}
                   $isOpen={isOpen}
                   onClick={closeMenu}
                   className={`${planet}`}
