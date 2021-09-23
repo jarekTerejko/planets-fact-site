@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   NavbarWrapper,
   NavbarInnerWrapper,
@@ -15,14 +15,19 @@ import X from "../../images/close.svg";
 import Chevron from "../../images/icon-chevron.svg";
 import { ImageEl } from "../Image/ImageElement";
 
-const Navbar = ({ isOpen, handleMenu }) => {
-
+const Navbar = () => {
   const closeMenu = () => {
     if (isOpen) {
       handleMenu();
     } else {
       return;
     }
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   const planets = [
@@ -57,7 +62,7 @@ const Navbar = ({ isOpen, handleMenu }) => {
                   $isOpen={isOpen}
                   onClick={closeMenu}
                   className={`${planet}`}
-                  // exact={true}
+                  exact={true}
                 >
                   {planet}
                   <NavbarChevronWrapper>
