@@ -11,7 +11,7 @@ const rotate = keyframes`
 `;
 
 export const LoaderWrapper = styled(motion.div)`
-  height: 100vh;
+  height: calc(100vh - 98px);
   width: 100%;
   position: fixed;
   top: 0;
@@ -21,12 +21,17 @@ export const LoaderWrapper = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: rgba(0, 0, 0, 0.99); */
-  /* background: rgba(255, 255, 255, 0.99); */
-  background: rgba(255, 255, 255, 0.99);
-  transform: translateY(120px);
-  @media screen and (max-width: 550px) {
+  background: var(--color-white);
+  transform: translateY(98px);
+
+  @media screen and (max-width: 1030px) {
+    transform: translateY(185px);
+    height: calc(100vh - 185px);
+  }
+
+  @media screen and (max-width: 830px) {
     transform: translateY(60px);
+    height: calc(100vh - 60px);
   }
 `;
 
