@@ -31,17 +31,13 @@
   --ff-base-size: 10px;
 }
 
-:root {
-  --button-hover: #313148;
-}
-
 html {
   font-size: var(--ff-base-size);
 }
 
 body {
   font-family: var(--ff-spartan);
-
+  color: var(--color-white);
   background-color: var(--color-black);
   background-image: url("./images/background-stars.svg");
   min-height: 102.4rem;
