@@ -3,7 +3,7 @@ import Loader from "../../components/Loader/index";
 import SunLink from "../../components/SunLink";
 
 const Home = () => {
-  const { data, isLoading, fetchErrorValue, fetchError } =
+  const { data, isLoading } =
     useFetch("./data.json");
 
   return (
