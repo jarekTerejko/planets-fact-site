@@ -3,15 +3,14 @@ import { useParams } from "react-router-dom";
 import FrameInfo from "../../components/FrameInfo";
 import useFetch from "../../useFetch";
 import Loader from "../../components/Loader/index";
-import { ImageEl } from "../../components/Image/ImageElement";
 import { WrapperEl } from "../../components/Wrapper/WrapperElement";
 import Tabs from "../../components/Tabs";
 import {
   TabPlanetImgWrapper,
   TabWrapper,
-  TabTextWrapper,
   TabPlanetInfoWrapper,
   ImageSurface,
+  ImageStandard,
 } from "../../components/TabWrapper/TabWrapper";
 import { Heading } from "../../components/Heading/Heading";
 import { DescriptionText } from "../../components/Description/DescriptionText";
@@ -86,7 +85,7 @@ const Planet = () => {
                   {
                     className: item.name.toLowerCase(),
                     textDesktop: "internal structure",
-                    textMobile: "internal",
+                    textMobile: "structure",
                     content: item.structure.content,
                     source: item.structure.source,
                     img: item.images.structure,
@@ -101,10 +100,10 @@ const Planet = () => {
                   },
                 ]),
                 (frameInfo = [
-                  { text: "rotation", value: item.rotation },
-                  { text: "revolution", value: item.revolution },
+                  { text: "rotation time", value: item.rotation },
+                  { text: "revolution time", value: item.revolution },
                   { text: "radius", value: item.radius },
-                  { text: "temperature", value: item.temperature },
+                  { text: "average temp.", value: item.temperature },
                 ]),
               ];
               return (
@@ -112,38 +111,30 @@ const Planet = () => {
                   <TabWrapper>
                     {tabIndex === 2 ? (
                       <TabPlanetImgWrapper>
-                        <ImageEl
-                          src={tabs[0].img}
-                          style={{ maxWidth: "450px" }}
-                        />
+                        <ImageStandard src={tabs[0].img} />
                         <ImageSurface src={tabs[tabIndex].img} />
                       </TabPlanetImgWrapper>
                     ) : (
                       <TabPlanetImgWrapper>
-                        <ImageEl
-                          src={tabs[tabIndex].img}
-                          style={{ maxWidth: "450px" }}
-                        />
+                        <ImageStandard src={tabs[tabIndex].img} />
                       </TabPlanetImgWrapper>
                     )}
                     <TabPlanetInfoWrapper>
-                      <TabTextWrapper>
-                        <Heading>{planet[0].name}</Heading>
-                        <DescriptionText>
-                          {tabs[tabIndex].content}
-                        </DescriptionText>
-                        <SourceWiki
-                          tabs={tabs}
-                          tabIndex={tabIndex}
-                          iconSource={IconSource}
-                        />
-                      </TabTextWrapper>
-                      <Tabs
-                        tabs={planet[1]}
-                        activeTabBtns={activeTabBtns}
-                        changeTab={changeTab}
+                      <Heading>{planet[0].name}</Heading>
+                      <DescriptionText>
+                        {tabs[tabIndex].content}
+                      </DescriptionText>
+                      <SourceWiki
+                        tabs={tabs}
+                        tabIndex={tabIndex}
+                        iconSource={IconSource}
                       />
                     </TabPlanetInfoWrapper>
+                    <Tabs
+                      tabs={planet[1]}
+                      activeTabBtns={activeTabBtns}
+                      changeTab={changeTab}
+                    />
                   </TabWrapper>
                   <FrameInfo frameInfo={frameInfo} />
                 </WrapperEl>

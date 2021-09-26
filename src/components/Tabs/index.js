@@ -16,7 +16,7 @@ const Tabs = ({ tabs, changeTab, activeTabBtns }) => {
             onClick={() => changeTab(i)}
             className={activeTabBtns[i].active ? `${tab.className} active` : ""}
           >
-            <FrameInfoTitle>{`0${i + 1}`}</FrameInfoTitle>
+            <FrameInfoTitle tabs >{`0${i + 1}`}</FrameInfoTitle>
             <TabBtnTextDesktop>{tab.textDesktop}</TabBtnTextDesktop>
             <TabBtnTextMobile>{tab.textMobile}</TabBtnTextMobile>
           </TabBtn>
