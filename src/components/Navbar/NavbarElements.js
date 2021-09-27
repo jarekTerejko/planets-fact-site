@@ -94,6 +94,7 @@ export const NavbarNavItems = styled.ul`
     background-color: var(--color-black);
     width: 100%;
     min-height: calc(100vh - 59px);
+    z-index: 1;
   }
 `;
 
@@ -120,8 +121,32 @@ export const NavbarNavLinkR = styled(NavLink)`
     color: var(--color-white);
   }
 
-  &.active {
-    color: red;
+  &.mercury.active {
+    color: var(--color-mercury);
+  }
+  &.mercury.active {
+    color: var(--color-mercury);
+  }
+  &.venus.active {
+    color: var(--color-venus);
+  }
+  &.earth.active {
+    color: var(--color-earth);
+  }
+  &.mars.active {
+    color: var(--color-mars);
+  }
+  &.jupiter.active {
+    color: var(--color-jupiter);
+  }
+  &.saturn.active {
+    color: var(--color-saturn);
+  }
+  &.uranus.active {
+    color: var(--color-uranus);
+  }
+  &.neptune.active {
+    color: var(--color-neptune);
   }
 
   @media screen and (max-width: 830px) {
@@ -140,13 +165,6 @@ export const NavbarNavLinkR = styled(NavLink)`
       width: 20px;
       height: 20px;
       border-radius: 50%;
-
-      &:nth-of-type(1) {
-        background-color: var(--color-venus);
-      }
-      &:nth-of-type(2) {
-        background-color: var(--color-mercury);
-      }
     }
 
     &.mercury::before {
@@ -175,7 +193,6 @@ export const NavbarNavLinkR = styled(NavLink)`
     }
   }
 `;
-
 
 export const NavbarChevronWrapper = styled.div`
   display: none;
