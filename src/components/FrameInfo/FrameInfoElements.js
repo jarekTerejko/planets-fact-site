@@ -38,14 +38,14 @@ export const FrameInfoTitle = styled.p`
   color: var(--color-light-grey);
   text-transform: uppercase;
   margin-bottom: 0.6rem;
-  
+
   @media screen and (max-width: 800px) {
     display: ${(props) => (props.tabs ? "none" : "")};
   }
 `;
 
 export const FrameInfoValue = styled.h3`
-  font-size: 4rem;
+  font-size: 3.6rem;
   font-family: var(--ff-oswald);
   font-weight: 400;
   text-transform: uppercase;
