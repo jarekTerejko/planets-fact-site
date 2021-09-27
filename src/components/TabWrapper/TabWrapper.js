@@ -37,6 +37,7 @@ export const TabPlanetImgWrapper = styled.div`
 
   @media screen and (max-width: 650px) {
     grid-row: 2/3;
+    min-height: 45rem;
   }
 `;
 
